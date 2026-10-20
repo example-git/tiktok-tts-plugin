@@ -1,0 +1,32 @@
+name: Extension packages
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.26.9'
+          cache: false
+      - run: go test ./...
+      - name: Build Linux packages
+        run: |
+          mkdir -p release
+          for arch in amd64 arm64; do
+            GOOS=linux GOARCH="$arch" python3 package.py --output "release/linux-$arch"
+            tar -C "release/linux-$arch" -czf "release/tiktok-tts-linux-$arch.tar.gz" tiktok-tts
+          done
+          cd release
+          sha256sum *.tar.gz > SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tiktok-tts-linux
+          path: |
+            release/*.tar.gz
+            release/SHA256SUMS

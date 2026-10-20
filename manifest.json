@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "id": "tiktok-tts",
+  "name": "TikTok TTS",
+  "description": "Generate speech using TikTok voices.",
+  "category": "tts",
+  "runtime": "stdio-v1",
+  "entrypoint": "extension",
+  "fields": [
+    {
+      "key": "endpoint",
+      "label": "API region",
+      "type": "select",
+      "required": true,
+      "default": "https://api16-normal-useast5.us.tiktokv.com",
+      "options": [
+        {
+          "value": "https://api16-normal-useast5.us.tiktokv.com",
+          "label": "US East 5"
+        },
+        {
+          "value": "https://api16-normal-useast5.tiktokv.us",
+          "label": "US East 5 alternate"
+        }
+      ]
+    },
+    {
+      "key": "session_token",
+      "label": "TikTok session token",
+      "type": "password",
+      "required": true,
+      "max_length": 32,
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "help": "TikTok sessionid. Leave blank to keep the saved credential."
+    }
+  ],
+  "voices": [
+    {
+      "id": "id_001",
+      "name": "Indonesian Female",
+      "group": "Asian"
+    },
+    {
+      "id": "jp_001",
+      "name": "Japanese Female 1",
+      "group": "Asian"
+    },
+    {
+      "id": "jp_003",
+      "name": "Japanese Female 2",
+      "group": "Asian"
+    },
+    {
+      "id": "jp_005",
+      "name": "Japanese Female 3",
+      "group": "Asian"
+    },
+    {
+      "id": "jp_006",
+      "name": "Japanese Male",
+      "group": "Asian"
+    },
+    {
+      "id": "kr_003",
+      "name": "Korean Female",
+      "group": "Asian"
+    },
+    {
+      "id": "kr_002",
+      "name": "Korean Male 1",
+      "group": "Asian"
+    },
+    {
+      "id": "kr_004",
+      "name": "Korean Male 2",
+      "group": "Asian"
+    },
+    {
+      "id": "en_au_001",
+      "name": "AU Female",
+      "group": "English"
+    },
+    {
+      "id": "en_au_002",
+      "name": "AU Male",
+      "group": "English"
+    },
+    {
+      "id": "en_male_funny",
+      "name": "Funny",
+      "group": "English"
+    },
+    {
+      "id": "en_male_narration",
+      "name": "Narrator",
+      "group": "English"
+    },
+    {
+      "id": "en_female_emotional",
+      "name": "Peaceful",
+      "group": "English"
+    },
+    {
+      "id": "en_male_cody",
+      "name": "Serious",
+      "group": "English"
+    },
+    {
+      "id": "en_uk_001",
+      "name": "UK Male 1",
+      "group": "English"
+    },
+    {
+      "id": "en_uk_003",
+      "name": "UK Male 2",
+      "group": "English"
+    },
+    {
+      "id": "en_us_001",
+      "name": "US Female 1",
+      "group": "English"
+    },
+    {
+      "id": "en_us_002",
+      "name": "US Female 2",
+      "group": "English"
+    },
+    {
+      "id": "en_us_006",
+      "name": "US Male 1",
+      "group": "English"
+    },
+    {
+      "id": "en_us_007",
+      "name": "US Male 2",
+      "group": "English"
+    },
+    {
+      "id": "en_us_009",
+      "name": "US Male 3",
+      "group": "English"
+    },
+    {
+      "id": "en_us_010",
+      "name": "US Male 4",
+      "group": "English"
+    },
+    {
+      "id": "fr_001",
+      "name": "French Male 1",
+      "group": "European"
+    },
+    {
+      "id": "fr_002",
+      "name": "French Male 2",
+      "group": "European"
+    },
+    {
+      "id": "de_001",
+      "name": "German Female",
+      "group": "European"
+    },
+    {
+      "id": "de_002",
+      "name": "German Male",
+      "group": "European"
+    },
+    {
+      "id": "it_male_m18",
+      "name": "Italian Male",
+      "group": "European"
+    },
+    {
+      "id": "es_002",
+      "name": "Spanish Male",
+      "group": "European"
+    },
+    {
+      "id": "en_us_c3po",
+      "name": "C3PO",
+      "group": "Fun"
+    },
+    {
+      "id": "en_us_chewbacca",
+      "name": "Chewbacca",
+      "group": "Fun"
+    },
+    {
+      "id": "en_us_ghostface",
+      "name": "Ghost Face",
+      "group": "Fun"
+    },
+    {
+      "id": "en_male_ghosthost",
+      "name": "Ghost Host",
+      "group": "Fun"
+    },
+    {
+      "id": "en_female_madam_leota",
+      "name": "Madame Leota",
+      "group": "Fun"
+    },
+    {
+      "id": "en_male_pirate",
+      "name": "Pirate",
+      "group": "Fun"
+    },
+    {
+      "id": "en_us_rocket",
+      "name": "Rocket",
+      "group": "Fun"
+    },
+    {
+      "id": "en_us_stitch",
+      "name": "Stitch",
+      "group": "Fun"
+    },
+    {
+      "id": "en_us_stormtrooper",
+      "name": "Stormtrooper",
+      "group": "Fun"
+    },
+    {
+      "id": "br_001",
+      "name": "Portuguese BR Female 1",
+      "group": "Latin American"
+    },
+    {
+      "id": "br_003",
+      "name": "Portuguese BR Female 2",
+      "group": "Latin American"
+    },
+    {
+      "id": "br_004",
+      "name": "Portuguese BR Female 3",
+      "group": "Latin American"
+    },
+    {
+      "id": "br_005",
+      "name": "Portuguese BR Male",
+      "group": "Latin American"
+    },
+    {
+      "id": "es_mx_002",
+      "name": "Spanish MX Male",
+      "group": "Latin American"
+    }
+  ],
+  "default_voice": "en_us_001",
+  "voice_pattern": "^[a-zA-Z0-9_]{2,64}$"
+}
